@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Let There Be Light",
+    "version": "0.0.1",
+    "description": "A Chrome extension to minimize the effectiveness of clickjacking attempts by setting opacity of invisible iframes to 1.",
+    "permissions": ["scripting"],
+    "icons": {
+        "16": "images/lightbulb-emoji-16.png",
+        "32": "images/lightbulb-emoji-32.png",
+        "48": "images/lightbulb-emoji-48.png",
+        "128": "images/lightbulb-emoji-128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{ec790dce-daa8-4082-a71b-4978436a70e7}"
+        }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["css/*.css"],
+            "matches": ["http://*/*", "https://*/*"]
+        }
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "css": ["css/global.css"]
+        }
+    ],
+    "host_permissions": ["http://*/*", "https://*/*"],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
