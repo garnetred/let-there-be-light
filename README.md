@@ -49,6 +49,3 @@ You can test the web page using one of Portswigger's Web Security Academy's clic
 ## Future Changes
 Eventually I plan to port the extension to Firefox.
 
-## Attribution
-
-
