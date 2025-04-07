@@ -12,6 +12,21 @@ This Chrome browser extension attempts to thwart clickjacking attempts by settin
 
 This extension attempts to minimize the effectiveness of this type of clickjacking that utilizes an invisible iframe on top of another element by setting the opacity of all iframes on every website to 1. It will not work for clickjacking attacks that are structured differently. It works by overriding the opacity of the given website, revealing the hidden site to the user. Hopefully this would cause users to avoid the clickjacking attack.
 
+## Example
+
+### Before
+<img width="707" alt="Screen Shot 2025-04-07 at 2 08 58 AM" src="https://github.com/user-attachments/assets/686edd29-e419-4b78-b996-80c28f5432de" />
+A login page on top of a decoy page that says "click me" to trick a user into deleting their account. For the purposes of this exercise the opacity of the iframe (login page) is `0.1`.
+
+<img width="592" alt="Screen Shot 2025-04-07 at 2 09 16 AM" src="https://github.com/user-attachments/assets/3c02806a-25f6-4121-a968-e3d35450d246" />
+Here the opacity is `0.0001`, rendering it effectively invisible. Some browsers will protect against iframes with an opacity of 0, so the number is as close as possible to avoid detection.
+
+
+### After
+
+<img width="502" alt="Screen Shot 2025-04-07 at 2 09 42 AM" src="https://github.com/user-attachments/assets/4de5962b-d802-4cf9-8704-3dc9288b7633" />
+Here the extension is running, so the default opacity for all iframes is 1. The iframe is clearly visible to the user and the "click me" div is no longer visible because it's beneath the iframe.
+
 ## Tech Stack
 
 This project uses vanilla JS, CSS, and HTML.
